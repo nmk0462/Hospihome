@@ -1,0 +1,53 @@
+{% extends "hospi/layout.html" %}
+
+{% block body %}
+<style type="text/css">
+	body,#ss{
+		background: #E0EAFC;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #CFDEF3, #E0EAFC);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+	}
+	
+	
+</style>
+    <div class="huu">
+    {% if message %}
+        <div>{{ message }}</div>
+    {% endif %}
+        <a href="{% url 'appoint' h.hn %}" class="btn btn-link" style="font-size: 30px">Book an appointment</a><br>
+    <ul><li>
+
+   
+    HOSPITAL NAME🏥: {{ h.hn }}<br>
+    ADDRESS: {{ h.addr }}<br>
+    SPECIALITIES: {{ h.specs }}<br>
+    DOCTOR(S): {{ h.docts }}<br>
+    CONTACT: {{ h.conts }}<br>
+    MEDICAL SHOP AVAILABLE: {{ h.amb }}<br>
+    {% if  k.avl != "No" %}
+    DOCTOR AVAIABLE:{{ k.avl }}🟢<br>
+    {% else %}
+     DOCTOR AVAIABLE:{{ k.avl }}​🔴​<br>
+     {% endif %}
+
+    TOTAL BEDS: {{ h.beds }}<br>
+    VACANT BEDS: {{ k.vc }}<br>
+    <br>   AVERAGE RATING OF THE HOSPITAL: {{ h.avg }}
+</li></ul>  <div class="form-group">
+    <h3>Rate this hospital</h3>
+    <form action="{% url 'rate' h.hn %}" method="POST">
+                 
+            	<label for="sel1"><h3>Rating??</h3></label>
+	<select name="raat" size="0" class="form-control" id="sel1">
+  <option value=1>1</option>
+  <option value=3>2</option>
+  <option value=3>3</option>
+  <option value=4>4</option>
+  <option value=5>5</option>
+</select><br>
+
+        </div>
+       <input class="btn btn-primary" type="submit" value="Submit">
+ </form></div>
+    {% endblock %}

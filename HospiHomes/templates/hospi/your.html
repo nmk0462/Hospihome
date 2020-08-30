@@ -1,0 +1,11 @@
+{% extends "hospi/layout.html" %}
+
+{% block body %}<ol>
+{% for hj in rt %}
+<li>
+  HOSPITAL NAME: {{ hj.hnma }}<br>
+  PATIENT NAME: {{ hj.pate }}<br>
+  DATE OF APPOINTMENT: {{ hj.dat }} <br></li>
+  {% endfor %} </ol> 
+
+   {% endblock %}

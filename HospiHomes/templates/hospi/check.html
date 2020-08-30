@@ -1,0 +1,15 @@
+{% extends "hospi/layout.html" %}
+
+{% block body %}
+
+{% for h in hj %}
+<ol><li>
+PATIENT NAME: {{ h.patname }}<br>
+AGE: {{ h.agge }}<br>
+PROBLEM: {{ h.probl }}<br>
+DATE OF APPOINTMENT REQUESTED: {{ h.datt }}<br></li></ol>
+<a href="{% url 'approved' h.id %}">APPROVE</a>
+{% endfor %}
+<a href="{% url 'back' %}" class="btn btn-link" style="font-size: 25px">Back</a>
+
+{% endblock %}

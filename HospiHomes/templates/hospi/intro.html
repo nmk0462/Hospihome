@@ -1,0 +1,44 @@
+
+{% extends "hospi/layout.html" %}
+{% load static %}
+{% block body %}
+<style type="text/css">
+	li
+	{
+       color: black;
+       font-size: 20px;
+       font-family: "Times New Roman", Times, serif;
+	}
+footer
+{
+	 color: black;
+       font-size: 20px;
+        font-family: "Times New Roman", Times, serif;
+}
+    #ddf{
+        width: 5%;
+        height:5%;
+    }
+
+</style>
+       <img id="ddf" src="static/hospi/ick.png">
+    <h2>INTRO:</h2>
+         <h3>This site contains the details of the hospitals, user can see how many vacant beds and availability of doctor in the hospital,user can also book an appointment.</h3>
+    <ul>      
+    	        <li>If you want to register an hospital go to admin register or if you are looking for hospitals go to user register</li>
+    	   <h2>=>User Guide</h2>     
+        <li>After logging in with your details,you can choose a catogory or can search for the hospital </li>
+        <li>You can see the hospital details and can book an appointment with that hospital</li>
+        <li>If your appointment is accepted then you can see at "Approved appointments"</li>
+        <h2>=>Hospital Admin Guide</h2>
+        <li>After logging in you have to enter your hospital details and an image of the hospital(not mandatory)</li>
+        <li>Then you will be directed to manage page where you can manage the details of vacant beds and doctor availability(Please update these details every hour)</li>
+        <li>"Appointments" button will show all the appointments of patients,you can approve them or else leave them</li>
+        
+    	
+    </ul>
+   <footer>
+     DESIGNED BY NAVEEN😎 
+        </footer>
+ 
+{% endblock %}

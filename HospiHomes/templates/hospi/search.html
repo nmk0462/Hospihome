@@ -1,0 +1,38 @@
+{% extends "hospi/layout.html" %}
+
+{% block body %}
+<style type="text/css">
+
+
+</style>
+    
+    {% if message %}
+        <div>{{ message }}</div>
+    {% endif %}
+    <h2>Categories</h2>
+    {% for hh in tyu %}
+    <a href="{% url 'list1' hh %}" class="btn btn-link" style="font-size: 30px">{{ hh }}</a><br>
+    {% endfor %}
+
+
+<h2>Search for the hospital or your problem</h2>
+
+                  <form action="{% url 'srh' %}" method="POST">
+                  	 {% csrf_token %}
+ 	     <div class="form-group">
+            <input class="form-control" type="text" name="sh" placeholder="Search Here">
+        </div>
+                  </form>
+
+                     
+    <h2>Suggested Hospitals</h2>
+    {% for h in tt %}
+    <a href="{% url 'hosp' h.hn %}"  class="btn btn-link" style="font-size: 30px">{{ h.hn }}</a><br>
+    {% endfor %}
+
+      {% for h in tt1 %}
+    <a href="{% url 'hosp' h.hn %}"  class="btn btn-link" style="font-size: 30px">{{ h.hn }}</a><br>
+    {% endfor %}
+
+
+                  {% endblock %}
